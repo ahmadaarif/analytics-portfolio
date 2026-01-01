@@ -1,7 +1,5 @@
 with base as (
    select customerid,
-          invoiceno,
-          date(invoicedate) as invoice_date,
           strftime(
              '%Y-%m-01',
              invoicedate
@@ -33,12 +31,29 @@ with base as (
      from base b
      join cohort c
    on b.customerid = c.customerid
+),cohort_counts as (
+   select cohort_month,
+          cohort_index,
+          count(distinct customerid) as active_customers
+     from joined
+    group by cohort_month,
+             cohort_index
+),cohort_sizes as (
+   select cohort_month,
+          active_customers as cohort_size
+     from cohort_counts
+    where cohort_index = 1
 )
-select cohort_month,
-       cohort_index,
-       count(distinct customerid) as active_customers
-  from joined
- group by cohort_month,
-          cohort_index
- order by cohort_month,
-          cohort_index;
+select cc.cohort_month,
+       cc.cohort_index,
+       cc.active_customers,
+       cs.cohort_size,
+       round(
+          100.0 * cc.active_customers / cs.cohort_size,
+          2
+       ) as retention_pct
+  from cohort_counts cc
+  join cohort_sizes cs
+on cc.cohort_month = cs.cohort_month
+ order by cc.cohort_month,
+          cc.cohort_index;
