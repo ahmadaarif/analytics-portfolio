@@ -1,0 +1,1 @@
+This project analyses customer purchasing behaviour to understand retention, repeat purchasing, and customer value. The objective is to identify patterns in customer lifetime behaviour and provide actionable insights to improve retention and revenue.

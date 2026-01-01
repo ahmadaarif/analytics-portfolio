@@ -1,5 +1,3 @@
-# Retail & E-commerce Sales Performance Analysis
-
 ## Business Problem
 A UK-based mid-sized e-commerce retailer wants to understand sales performance and customer purchasing behaviour to support data-driven decisions around revenue growth, product strategy, and operations.
 

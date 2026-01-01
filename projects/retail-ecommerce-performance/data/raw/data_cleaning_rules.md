@@ -1,5 +1,3 @@
-# Data Cleaning Rules
-
 ## Missing CustomerID
 - Records without CustomerID will be excluded from customer-level analysis
 - They may be retained for overall sales trends where appropriate

@@ -1,5 +1,3 @@
-# Data Understanding
-
 ## Dataset Source
 UCI Machine Learning Repository – Online Retail dataset
 

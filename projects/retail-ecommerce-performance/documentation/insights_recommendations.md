@@ -1,5 +1,3 @@
-# Insights & Recommendations – Retail Performance
-
 ## Executive Summary
 - Total Revenue: £600.09K
 - Orders: ~1,000
