@@ -14,3 +14,11 @@ __pycache__/
 
 # Environment files
 .env
+
+# Raw datasets
+*.xlsx
+*.csv
+*.db
+
+# Allow processed data
+!**/data/processed/*.csv
